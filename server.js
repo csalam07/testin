@@ -7,8 +7,8 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.get('/api/getzepetor', async (req, res) => {
-  res.status(200).json({ msg: 'Sam' });
+app.get('/', async (req, res) => {
+  res.send('<h1>Working Fine </h1>');
 });
 
 app.post('/api/getzepetor', async (req, res) => {
@@ -114,6 +114,6 @@ app.post('/api/getzepetor', async (req, res) => {
 });
 
 const port = process.env.PORT || 5000;
-http.listen(port, () => {
+app.listen(port, () => {
   console.log('Server is running on port', port);
 });
